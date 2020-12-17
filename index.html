@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
     <title>미세먼지 API</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -35,7 +36,7 @@
         $('#datas').empty();
         $.ajax({
             type:"GET",
-            url: "/openapi.seoul.go.kr:8088/6d4d776b466c656533356a4b4b5872/json/RealtimeCityAir/1/99",
+            url: "http://openapi.seoul.go.kr:8088/6d4d776b466c656533356a4b4b5872/json/RealtimeCityAir/1/99",
             data:{},
             success:function(res){
                 let data = res['RealtimeCityAir']['row'];
